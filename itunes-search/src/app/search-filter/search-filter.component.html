@@ -1,0 +1,22 @@
+<div class="row">
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="search" type="text" class="validate" [formControl]="searchField">
+          <label for="search">Search</label>
+        </div>
+        <div class="input-field col s3">
+            <select class="browser-default" name="selectCategory" (change)="setCategory()" [(ngModel)]="selectedCategory">
+                <option value="" disabled selected>Choose Category</option>
+                <option *ngFor="let category of categories" [value]="category">{{category}}</option>
+            </select>
+          </div>
+          <div class="input-field col s3">
+            <select class="browser-default" name="selectDate" (change)="setDate()" [(ngModel)]="selectedDate">
+                <option value="" disabled selected>Choose Date</option>
+                <option *ngFor="let date of sortedDates " [value]="date">{{date | date}}</option>
+            </select>
+          </div>
+      </div>
+    </form>
+  </div>
